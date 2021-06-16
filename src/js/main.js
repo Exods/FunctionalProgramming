@@ -96,10 +96,10 @@ function getTotalAmoun(shoppingCart) {
 console.info(getTotalAmoun(shoppingCart2));
 console.info('======================');
 var users4 = [
-    { id: 11, name: 'Adam', age: 23, group: 'editor' },
-    { id: 47, name: 'John', age: 28, group: 'admin' },
-    { id: 85, name: 'William', age: 34, group: 'editor' },
-    { id: 97, name: 'Oliver', age: 28, group: 'admin' }
+    {id: 11, name: 'Adam', age: 23, group: 'editor'},
+    {id: 47, name: 'John', age: 28, group: 'admin'},
+    {id: 85, name: 'William', age: 34, group: 'editor'},
+    {id: 97, name: 'Oliver', age: 28, group: 'admin'}
 ];
 const even = (element) => element.name === 'Adam';
 let searchName = users4.some(even);
@@ -111,10 +111,10 @@ let uniqueArr = [...new Set(arr)];
 console.log("Удаление дубликатов из массива числе/строк: " + uniqueArr);
 
 var users = [
-    { id: 11, name: 'Adam', age: 23, group: 'editor' },
-    { id: 47, name: 'John', age: 28, group: 'admin' },
-    { id: 85, name: 'William', age: 34, group: 'editor' },
-    { id: 97, name: 'Oliver', age: 28, group: 'admin' }
+    {id: 11, name: 'Adam', age: 23, group: 'editor'},
+    {id: 47, name: 'John', age: 28, group: 'admin'},
+    {id: 85, name: 'William', age: 34, group: 'editor'},
+    {id: 97, name: 'Oliver', age: 28, group: 'admin'}
 ];
 let res = users.filter(it => it.name.includes('oli'));
 console.info("Поиск по массиву");
@@ -126,10 +126,10 @@ let flat = nested.reduce((acc, it) => [...acc, ...it], []);
 
 console.info('=====Замена в объекте=========');
 let users5 = [
-    { id: 11, name: 'Adam', age: 23, group: 'editor' },
-    { id: 47, name: 'John', age: 28, group: 'admin' },
-    { id: 85, name: 'William', age: 34, group: 'editor' },
-    { id: 97, name: 'Oliver', age: 28, group: 'admin' }
+    {id: 11, name: 'Adam', age: 23, group: 'editor'},
+    {id: 47, name: 'John', age: 28, group: 'admin'},
+    {id: 85, name: 'William', age: 34, group: 'editor'},
+    {id: 97, name: 'Oliver', age: 28, group: 'admin'}
 ];
 let updatedUsers = users5.map(
     p => p.id !== 47 ? p : {...p, age: p.age + 1}
@@ -142,6 +142,29 @@ let arrB = [5, 2, 6, 7, 1];
 let arrRes = arrA.concat(arrB);
 
 console.log(arrRes);
-
-
+let promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log('сработало');
+        resolve(data = 'test');
+    }, 1000)
+})
+let promise2 = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log('сработало2');
+        resolve(data = 'test2');
+    }, 1000)
+})
+promise.then(resolve => {
+        setTimeout(function () {
+            console.log(data)
+        }, 1000)
+        promise2.then(resolve => {
+                setTimeout(function () {
+                    console.log(data)
+                }, 1000)
+            }
+        )
+    }
+)
+/*test*/
 
